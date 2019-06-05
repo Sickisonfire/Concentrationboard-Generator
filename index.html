@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Concentrationboard Generator</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        margin: 0;
+        padding: 0;
+        border-collapse: collapse;
+      }
+      td {
+        width: 25px;
+        height: 25px;
+        border: solid 1px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Generate a randomized concentrationboard</h2>
+    <label for="sizeinput">enter size of the board</label>
+    <input type="number" name="sizeinput" id="sizeinput" value="10" />
+    <input type="button" value="Generate!" id="generate" />
+    <p id="output"></p>
+
+    <table>
+      <tr>
+        <td>5</td>
+        <td>5</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>5</td>
+        <td>5</td>
+      </tr>
+    </table>
+
+    <script src="app.js"></script>
+  </body>
+</html>
