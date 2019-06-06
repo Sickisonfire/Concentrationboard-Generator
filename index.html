@@ -22,34 +22,23 @@
         height: 25px;
         border: solid 1px;
         text-align: center;
+        vertical-align: middle;
       }
     </style>
   </head>
   <body>
     <h2>Generate a randomized concentrationboard</h2>
-    <label for="sizeinput">enter size of the board</label>
-    <input type="number" name="sizeinput" id="sizeinput" value="10" />
+    <label for="sizeinput">pick a size</label>
+    <select id="sizeinput">
+      <option value="5">25</option>
+      <option value="64">64</option>
+      <option value="100">100</option>
+    </select>
     <input type="button" value="Generate!" id="generate" />
     <p id="output"></p>
-
-    <table>
-      <tr>
-        <td>5</td>
-        <td>5</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>5</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>5</td>
-        <td>5</td>
-      </tr>
-    </table>
-
+    <div id="board-container">
+      <table id="boardtable"></table>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
