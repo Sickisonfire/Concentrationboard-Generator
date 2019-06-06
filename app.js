@@ -20,9 +20,20 @@ const shuffle = array => {
 
   return array;
 };
+//generate tds
+function generateTd(element, array) {
+  for (let i = 0; i < array.length; i++) {
+    let td = document.createElement('td');
+    td.innerText = array[i];
+
+    element.appendChild(td);
+  }
+}
 
 //create the board
 function createBoard() {
+  const size = parseInt(document.getElementById('sizeinput').value);
+
   //console.log(typeof size);
   //remove old board
   document.getElementById('boardtable').remove();
@@ -32,21 +43,26 @@ function createBoard() {
   table.id = 'boardtable';
   console.log(table);
   document.getElementById('board-container').appendChild(table);
-  const size = parseInt(document.getElementById('sizeinput').value);
+
   //generate Array
   let arr = Array.from(Array(size).keys());
 
   //generate shuffledarray and add 1 to all
   let arrShuffled = shuffle(arr).map(x => x + 1);
+  let b = 0;
+  let sqrt = Math.sqrt(arrShuffled.length);
+  let e = sqrt;
 
-  for (let i = 0; i < arrShuffled.length; i++) {
-    let board;
-    let td = document.createElement('td');
-    td.innerText = arrShuffled[i];
+  //generate rows
+  for (let i = 0; i < sqrt; i++) {
+    let tr = document.createElement('tr');
+    const newArr = arrShuffled.slice(b, e);
+    generateTd(tr, newArr);
 
-    table.appendChild(td);
+    document.getElementById('boardtable').appendChild(tr);
 
-    document.getElementById('output').innerHTML = arrShuffled;
+    b = e;
+    e = e + sqrt;
   }
   console.log(arrShuffled);
 }
